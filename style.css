@@ -1,0 +1,9 @@
+.darkMode {
+    background-color: #191919;
+    color: aliceblue;
+}
+
+.lightMode {
+    background-color: aliceblue;
+    color: #191919
+}
