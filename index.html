@@ -12,6 +12,29 @@
 
     <button id="switchMode">Toggle light/dark mode</button>
 
+
+    <!-- main container for all content -->
+<div class="mainContainer">
+    <div class="score"></div>
+
+    <!-- div for a question -->
+<div class="question">
+    <h2>#1 Is Joe Biden tierd?</h2>
+<!-- Div for question option (every option gets it´s own div) -->
+    <div class="option">
+        <!-- Radio input should have same names but different id´s and value´s -->
+        <input type="radio" name="questionOneOption" value="true" id="questionOneOptionTrue">
+        <label for="questionOneOptionTrue">Yes</label>
+    </div>
+
+    <div class="option">
+        <input type="radio" name="questionOneOption" value="false" id="questionOneOptionFalse">
+        <label for="questionOneOptionFalse">No</label>
+    </div>
+</div>
+    <button id="submit">Submit</button>
+</div>
+
     <script src="colorMode.js"></script>
     <script src="index.js"></script>
   </body>
