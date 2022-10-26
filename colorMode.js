@@ -1,4 +1,6 @@
 
+/* Här har jag skapat en funktion som byter mellan lightmode darkmode,
+och som lyssnar på klick eventet, har även gjort styling med css */
 function initiateColorMode() {
     const switchModeButton = document.querySelector("#switchMode");
 
