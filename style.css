@@ -1,9 +1,28 @@
 .darkMode {
-    background-color: #191919;
+    background-color: #463d3d;
     color: white;
 }
 
 .lightMode {
-    background-color: aliceblue;
+    background-color: rgb(243, 243, 243);
     color: #191919
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 600px;
+}
+
+.titleAndToggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#switchMode {
+    height: 30px;
 }

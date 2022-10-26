@@ -5,8 +5,8 @@ function showTotalScore(score, maxScore) {
   const scoreParagraphElement = document.querySelector("#totalScore");
   scoreParagraphElement.innerText = `Your total score is ${score} out of ${maxScore} `;
 
-  // Change color based on score percentage
   const scoreDiv = document.querySelector(".score");
+  // Räknar ut poäng i procent
   const scorePercentage = score / maxScore;
 
   if (scorePercentage < 0.5) {
@@ -14,8 +14,10 @@ function showTotalScore(score, maxScore) {
   } else if (scorePercentage <= 0.75) {
     scoreDiv.style.backgroundColor = "orange";
   } else {
-    scoreDiv.style.backgroundColor = "green";
+    scoreDiv.style.backgroundColor = "#23bf23";
   }
+
+  scoreDiv.scrollIntoView();
 }
 
 /* här har jag skapat en funktion som innehåller min logik för att räkna poäng*/
@@ -47,20 +49,25 @@ function countScore() {
       `input[name="${question.elementName}"]:checked`
     );
 
+    // Behållare för rätt och fel svar / input elemnt
     let correctAnswers = [];
     let wrongAnswers = [];
 
     checkedElements.forEach((element) => {
+      // Kollar om input element värdet inkluderas i correctAnswers array i question objektet
       if (question.correctAnswer.includes(element.value)) {
         correctAnswers.push(element);
       } else {
         wrongAnswers.push(element);
+        // Hämtar label som är nästa elementet till input elementet och ändrar till röd då det är fel
         const label = element.nextElementSibling;
         label.style.color = "red";
       }
     });
 
+    // kollar om wrongAnswers arrayn är tom, då har vi inga fel svar (true/false)
     const hasNoFailedAnswers = wrongAnswers.length === 0;
+    // kollar om antalet i checkade rätta svar är lika mycket som det förväntade antalet rätta svar i question objektet
     const hasAllCorrectAnswers = correctAnswers.length === question.correctAnswer.length;
 
     if (hasNoFailedAnswers && hasAllCorrectAnswers) {
