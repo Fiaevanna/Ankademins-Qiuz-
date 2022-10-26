@@ -3,7 +3,8 @@
 function countScore(){
     let score = 0;
     const questions = [
-        { elementName: "questionOneOption", correctAnswer: "true" }
+        { elementName: "questionOneOption", correctAnswer: "true" },
+        { elementName: "questionTwoOption", correctAnswer: "jail" }
     ];
 
    
@@ -25,4 +26,6 @@ sen skapar jag en eventlyssnare p√• min knapp och den lyssnar efter klick och d√
 
     const submitButton = document.querySelector("#submit");
     submitButton.addEventListener("click", countScore);
+
+
 

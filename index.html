@@ -12,11 +12,11 @@
 
     <button id="switchMode">Toggle light/dark mode</button>
 
-
     <!-- main container for all content -->
 <div class="mainContainer">
     <div class="score"></div>
 
+    <!-- Question One -->
     <!-- div for a question -->
 <div class="question">
     <h2>#1 Is Joe Biden tierd?</h2>
@@ -30,9 +30,36 @@
     <div class="option">
         <input type="radio" name="questionOneOption" value="false" id="questionOneOptionFalse">
         <label for="questionOneOptionFalse">No</label>
+    </div>+
+</div>
+
+<!-- Question Two -->
+<div class="question">
+    <h2>#2 What did Trupm say to Hillary?</h2>
+<!-- Div for question option (every option gets it´s own div) -->
+    <div class="option">
+        <!-- Radio input should have same names but different id´s and value´s -->
+        <input type="radio" name="questionTwoOption" value="snack" id="questionTwoOptionSnack">
+        <label for="questionTwoOptionSnack">She looks like a snack</label>
+    </div>
+
+    <div class="option">
+        <input type="radio" name="questionTwoOption" value="jail" id="questionTwoOptionJail">
+        <label for="questionTwoOptionJail">She`d be in jail</label>
+    </div>
+    <div class="option">
+        <input type="radio" name="questionTwoOption" value="help" id="questionTwoOptionHelp">
+        <label for="questionTwoOptionHelp">She needs some help</label>
+    </div>
+    <div class="option">
+        <input type="radio" name="questionTwoOption" value="talk" id="questionTwoOptionTalk">
+        <label for="questionTwoOptionTalk">Who is she to talk</label>
     </div>
 </div>
+
+
     <button id="submit">Submit</button>
+
 </div>
 
     <script src="colorMode.js"></script>
