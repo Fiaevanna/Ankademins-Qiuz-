@@ -1,4 +1,12 @@
 
+function showTotalScore(score, maxScore) {
+const scoreParagraphElement = document.querySelector("#totalScore");
+scoreParagraphElement.innerText = `Your total score is ${score} out of ${maxScore} `;
+
+}
+
+
+
 /* här har jag skapat en funktion som innehåller min logik för att räkna poäng*/
 function countScore(){
     let score = 0;
@@ -17,7 +25,7 @@ function countScore(){
             score ++; 
         }
       });
-      console.log(score);
+      showTotalScore(score, questions.length); 
 }
 
 /* här har jag skapat en variabel som innehåller min submitknapp, 
