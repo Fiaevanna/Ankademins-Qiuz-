@@ -22,11 +22,12 @@ function countScore() {
     { elementName: "questionFiveOption", correctAnswer: ["kodak"] },
     { elementName: "questionSixOption", correctAnswer: ["knows"] },
     { elementName: "questionSevenOption", correctAnswer: ["kim", "potential", "fan"] },
+    { elementName: "questionEightOption", correctAnswer: ["true"] },
+    { elementName: "questionNineOption", correctAnswer: ["florida"] },
+    { elementName: "questionTenOption", correctAnswer: ["texas"] },
     
   ];
-
   
-
 
   /* Här skapar jag en loop som loopar igenom mina questions ..... */
   questions.forEach((question) => {
