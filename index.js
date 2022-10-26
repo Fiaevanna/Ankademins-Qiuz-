@@ -1,7 +1,21 @@
+
+
 /* Här har jag skapat en funktion som visar dina poäng jämtemot maxpoängen. */
 function showTotalScore(score, maxScore) {
   const scoreParagraphElement = document.querySelector("#totalScore");
   scoreParagraphElement.innerText = `Your total score is ${score} out of ${maxScore} `;
+
+  // Change color based on score percentage
+  const scoreDiv = document.querySelector(".score");
+  const scorePercentage = score / maxScore;
+
+  if (scorePercentage < 0.5) {
+    scoreDiv.style.backgroundColor = "red";
+  } else if (scorePercentage <= 0.75) {
+    scoreDiv.style.backgroundColor = "orange";
+  } else {
+    scoreDiv.style.backgroundColor = "green";
+  }
 }
 
 /* här har jag skapat en funktion som innehåller min logik för att räkna poäng*/
@@ -33,22 +47,32 @@ function countScore() {
       `input[name="${question.elementName}"]:checked`
     );
 
-    let correctAnswers = 0;
+    let correctAnswers = [];
+    let wrongAnswers = [];
 
     checkedElements.forEach((element) => {
       if (question.correctAnswer.includes(element.value)) {
-        correctAnswers++;
+        correctAnswers.push(element);
       } else {
-        correctAnswers--;
+        wrongAnswers.push(element);
+        const label = element.nextElementSibling;
+        label.style.color = "red";
       }
     });
 
-    if (correctAnswers === question.correctAnswer.length) {
-      score++;
+    const hasNoFailedAnswers = wrongAnswers.length === 0;
+    const hasAllCorrectAnswers = correctAnswers.length === question.correctAnswer.length;
+
+    if (hasNoFailedAnswers && hasAllCorrectAnswers) {
+      score++; 
     }
   });
   showTotalScore(score, questions.length);
 }
+
+
+
+
 
 /* här har jag skapat en variabel som innehåller min submitknapp, 
 sen skapar jag en eventlyssnare på min knapp och den lyssnar efter klick och då körs countscore.
